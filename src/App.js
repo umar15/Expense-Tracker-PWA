@@ -5,8 +5,12 @@ import History from "./components/History";
 import IncomeExpense from "./components/IncomeExpense";
 import AddTransaction from "./components/AddTransaction";
 import Balance from "./components/Balance";
-
+import { useEffect } from "react";
+import { initNotification } from "./services/notifications";
 function App() {
+	useEffect(() => {
+		initNotification();
+	}, []);
 	return (
 		<TransactionProvider>
 			<Header />
